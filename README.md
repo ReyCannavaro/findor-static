@@ -79,6 +79,30 @@ Karena itu, koneksi internet dibutuhkan agar dependency CDN termuat dengan baik 
 - Behavior umum seperti navbar, drawer mobile, dan helper query parameter berada di `assets/js/main.js`.
 - Styling utama berada di `assets/css/style.css`.
 
+## Aturan Branch
+
+Project ini menggunakan aturan branch berikut:
+
+- `dev` - branch utama untuk pengembangan. Semua developer hanya diperbolehkan melakukan push ke branch ini.
+- `main` - branch production. Branch ini hanya digunakan untuk kode yang sudah siap rilis.
+
+Workflow yang disarankan:
+
+```powershell
+git checkout dev
+git pull origin dev
+```
+
+Setelah perubahan selesai:
+
+```powershell
+git add .
+git commit -m "Deskripsi perubahan"
+git push origin dev
+```
+
+Jangan push langsung ke branch `main`. Perubahan dari `dev` ke `main` dilakukan hanya saat rilis production.
+
 ## Deploy
 
 Karena project ini statis, deploy bisa dilakukan ke layanan static hosting seperti:

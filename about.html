@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tentang Kami — Findor</title>
+<meta name="description" content="Findor adalah platform kurasi vendor event premium pertama di Indonesia. Kenali cerita, nilai, dan tim di balik Findor.">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="icon" href="assets/images/logo-icon.png">
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<div class="fn-nav-wrapper" id="fnNavWrapper">
+  <nav class="fn-pill" id="fnPill">
+    <a href="index.html" class="fn-logo"><img src="assets/images/logo_findor.jpg" alt="Findor" class="fn-logo-img"></a>
+    <div class="fn-sep-line"></div>
+    <div class="fn-links">
+      <a href="search.html" class="fn-link">Jelajahi Vendor</a>
+      <a href="how-it-works.html" class="fn-link">Cara Kerja</a>
+      <a href="about.html" class="fn-link active">Tentang Kami</a>
+    </div>
+    <div class="fn-desktop-actions" style="display:flex;align-items:center;gap:4px;">
+      <div class="fn-sep-line"></div>
+      <a href="#" class="fn-login" onclick="alert('Fitur login memerlukan backend dan tidak tersedia pada demo statis ini.');return false;">Masuk</a>
+      <a href="how-it-works.html#daftar-vendor" class="fn-cta">Daftarkan Vendormu</a>
+    </div>
+    <button class="fn-toggle" id="fnToggle" aria-label="Toggle menu">
+      <svg id="fnToggleIconMenu" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+      <svg id="fnToggleIconClose" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="display:none;"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </nav>
+</div>
+<div class="fn-backdrop" id="fnBackdrop"></div>
+<div class="fn-drawer-wrap" id="fnDrawerWrap">
+  <div class="fn-drawer">
+    <a href="search.html" class="fn-m-link">Jelajahi Vendor<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+    <a href="how-it-works.html" class="fn-m-link">Cara Kerja<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+    <a href="about.html" class="fn-m-link active">Tentang Kami<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+    <div class="fn-m-sep"></div>
+    <a href="how-it-works.html#daftar-vendor" class="fn-m-cta">Daftarkan Layanan</a>
+    <a href="#" class="fn-m-login" onclick="alert('Fitur login memerlukan backend dan tidak tersedia pada demo statis ini.');return false;">Masuk</a>
+  </div>
+</div>
+<!-- ===== END NAVBAR ===== -->
+
+<main style="min-height:100vh;background:var(--white);">
+
+  <section class="about-hero">
+    <img src="assets/images/about/hero.jpg" alt="" class="about-hero-img">
+    <div class="about-hero-overlay1"></div>
+    <div class="about-hero-overlay2"></div>
+    <div class="about-hero-content">
+      <h1 class="about-hero-title">Kami Hadir untuk Membuat<br>Event Anda <em>Tak Terlupakan</em></h1>
+      <p class="about-hero-sub">Findor adalah platform kurasi vendor event premium pertama di Indonesia — menghubungkan penyelenggara acara dengan vendor terbaik yang telah terverifikasi secara ketat.</p>
+      <div class="about-hero-cta">
+        <a href="search.html" class="btn-primary about-btn">Cari Vendor
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <a href="how-it-works.html" class="btn-secondary about-btn">Cara Kerja</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="about-stats-section">
+    <div class="about-container">
+      <div class="stats-grid">
+        <div class="stat-item stat-item-border"><p class="stat-value">2.400+</p><p class="stat-label">Vendor Terverifikasi</p></div>
+        <div class="stat-item stat-item-border"><p class="stat-value">18.000+</p><p class="stat-label">Event Sukses</p></div>
+        <div class="stat-item stat-item-border"><p class="stat-value">99%</p><p class="stat-label">Tingkat Kepuasan</p></div>
+        <div class="stat-item"><p class="stat-value">34</p><p class="stat-label">Kota di Indonesia</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about-section about-section-gray">
+    <div class="about-container">
+      <div class="story-grid">
+        <div class="story-text">
+          <div class="story-badge"><span>Cerita Kami</span></div>
+          <h2 class="story-title">Lahir dari Frustrasi,<br>Tumbuh dari <em>Kepercayaan</em></h2>
+          <p class="story-body">Findor lahir pada 2022 ketika para pendirinya mengalami sendiri betapa sulitnya menemukan vendor event yang benar-benar bisa diandalkan.</p>
+          <p class="story-body">Kami membangun Findor dengan satu prinsip: <strong style="color:var(--text-primary);">hanya vendor yang benar-benar layak yang boleh tampil</strong>.</p>
+          <div class="story-checklist">
+            <div class="story-check-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--verified-green)" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span>Didirikan di Sidoarjo, 2022</span></div>
+            <div class="story-check-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--verified-green)" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span>Hadir di 34 kota Indonesia</span></div>
+            <div class="story-check-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--verified-green)" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span>Didukung 2.400+ vendor terverifikasi</span></div>
+          </div>
+        </div>
+        <div class="story-img-wrap">
+          <img src="assets/images/about/story.jpg" alt="Findor story" class="story-img">
+          <div class="story-img-badge">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--amber)" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <div><div class="story-img-badge-label">Berbasis di</div><div class="story-img-badge-value">Sidoarjo, Indonesia</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about-section about-section-white">
+    <div class="about-container">
+      <div class="about-section-head">
+        <h2 class="about-section-title">Perjalanan Findor</h2>
+        <p class="about-section-sub">Dari ide sederhana menjadi platform terpercaya jutaan pengguna.</p>
+      </div>
+      <div class="milestone-grid">
+        <div class="milestone-card milestone-dark">
+          <div class="milestone-year milestone-year-amber">2022</div>
+          <div class="milestone-title milestone-title-white">Findor Didirikan</div>
+          <div class="milestone-desc milestone-desc-muted">Lahir di Sidoarjo dengan misi menghubungkan klien dan vendor event berkualitas.</div>
+        </div>
+        <div class="milestone-card milestone-light">
+          <div class="milestone-year milestone-year-forest">2023</div>
+          <div class="milestone-title milestone-title-dark">Ekspansi 10 Kota</div>
+          <div class="milestone-desc milestone-desc-secondary">Hadir di Surabaya, Bandung, Bali, Medan, dan 6 kota besar lainnya.</div>
+        </div>
+        <div class="milestone-card milestone-dark">
+          <div class="milestone-year milestone-year-amber">2024</div>
+          <div class="milestone-title milestone-title-white">500+ Vendor Aktif</div>
+          <div class="milestone-desc milestone-desc-muted">Melampaui 500 vendor terverifikasi dengan tingkat kepuasan klien 99%.</div>
+        </div>
+        <div class="milestone-card milestone-light">
+          <div class="milestone-year milestone-year-forest">2025</div>
+          <div class="milestone-title milestone-title-dark">34 Kota Indonesia</div>
+          <div class="milestone-desc milestone-desc-secondary">Menjadi platform vendor event terluas dengan jangkauan nasional.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about-section about-section-gray">
+    <div class="about-container">
+      <div class="about-section-head">
+        <h2 class="about-section-title">Yang Kami Percaya</h2>
+        <p class="about-section-sub">Nilai-nilai yang menjadi fondasi setiap keputusan di Findor.</p>
+      </div>
+      <div class="values-grid">
+        <div class="value-card">
+          <div class="value-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+          <div><p class="value-title">Kepercayaan</p><p class="value-desc">Setiap vendor melewati verifikasi ketat sebelum tampil di platform. Kami tidak berkompromi soal kualitas.</p></div>
+        </div>
+        <div class="value-card">
+          <div class="value-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+          <div><p class="value-title">Kurasi Ketat</p><p class="value-desc">Bukan sekadar direktori. Findor adalah galeri terkurasi — hanya yang terbaik yang layak masuk.</p></div>
+        </div>
+        <div class="value-card">
+          <div class="value-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+          <div><p class="value-title">Berpihak pada Klien</p><p class="value-desc">Garansi dana kembali, mediasi sengketa, dan dukungan 24/7 memastikan Anda selalu terlindungi.</p></div>
+        </div>
+        <div class="value-card">
+          <div class="value-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+          <div><p class="value-title">Efisiensi</p><p class="value-desc">Temukan, negosiasi, dan booking vendor premium dalam satu platform — tanpa ribet, tanpa perantara.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about-section about-section-white">
+    <div class="about-container">
+      <div class="about-section-head">
+        <h2 class="about-section-title">Orang-orang di Balik Findor</h2>
+        <p class="about-section-sub">Tim yang berdedikasi membangun ekosistem event terbaik di Indonesia.</p>
+      </div>
+      <div class="team-grid">
+        <div class="team-card">
+          <div class="team-img-wrap"><img src="assets/images/team/rey.jpg" alt="Reyjuno Al Cannvaro" class="team-img"><div class="team-img-overlay"></div></div>
+          <div class="team-info"><p class="team-name">Reyjuno Al Cannvaro</p><p class="team-role">Co-Founder &amp; CEO</p></div>
+        </div>
+        <div class="team-card">
+          <div class="team-img-wrap"><img src="assets/images/team/raffi.jpg" alt="Raffi Akbar Baihaqy" class="team-img"><div class="team-img-overlay"></div></div>
+          <div class="team-info"><p class="team-name">Raffi Akbar Baihaqy</p><p class="team-role">Co-Founder &amp; CPO</p></div>
+        </div>
+        <div class="team-card">
+          <div class="team-img-wrap"><img src="assets/images/team/arga.jpg" alt="Arga Fikri Akbar" class="team-img"><div class="team-img-overlay"></div></div>
+          <div class="team-info"><p class="team-name">Arga Fikri Akbar</p><p class="team-role">Head of Curation</p></div>
+        </div>
+        <div class="team-card">
+          <div class="team-img-wrap"><img src="assets/images/team/bayu.jpg" alt="Abbiyu Putra Praditama" class="team-img"><div class="team-img-overlay"></div></div>
+          <div class="team-info"><p class="team-name">Abbiyu Putra Praditama</p><p class="team-role">Head of Vendor Relations</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about-section about-section-gray">
+    <div class="about-container">
+      <div class="about-cta-box">
+        <img src="assets/images/about/cta.jpg" alt="" class="about-cta-img">
+        <div class="about-cta-overlay"></div>
+        <div style="position:relative;z-index:2;">
+          <h2 class="about-cta-title">Siap Wujudkan Event <em>Impian</em> Anda?</h2>
+          <p class="about-cta-sub">Jelajahi ratusan vendor premium yang sudah terverifikasi dan siap membantu acara Anda.</p>
+          <div class="about-cta-actions">
+            <a href="search.html" class="btn-primary about-btn">Cari Vendor
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+            <a href="how-it-works.html" class="btn-secondary about-btn">Standar Findor</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div style="height:60px;background:linear-gradient(to bottom,#f5f5f0,#ffffff);"></div>
+    <div style="background:#ffffff;">
+      <div style="max-width:1280px;margin:0 auto;padding:0 clamp(16px,4vw,32px) 40px;box-sizing:border-box;">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <img src="assets/images/logo_findor.jpg" alt="Findor" style="height:44px;width:auto;object-fit:contain;margin-bottom:12px;border-radius:8px;">
+            <p style="font-size:12px;color:#6b7280;line-height:1.8;margin:0 0 18px;max-width:240px;">Pasar kurasi untuk vendor event premium. Menghubungkan penyelenggara dengan vendor terpercaya, suara, dan destinasi terbaik.</p>
+            <div style="display:flex;align-items:center;gap:8px;">
+              <a href="#" aria-label="Instagram" class="footer-social"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#374151" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="#374151" stroke="none"/></svg></a>
+              <a href="#" aria-label="Facebook" class="footer-social"><svg width="15" height="15" viewBox="0 0 24 24" fill="#374151"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+              <a href="#" aria-label="TikTok" class="footer-social"><svg width="15" height="15" viewBox="0 0 24 24" fill="#374151"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.75a4.85 4.85 0 0 1-1.01-.06z"/></svg></a>
+            </div>
+          </div>
+          <div class="footer-links-grid">
+            <div><h4 style="font-size:11px;font-weight:700;color:#111827;margin-bottom:14px;text-transform:uppercase;letter-spacing:0.07em;">Platform</h4>
+              <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px;">
+                <li><a href="search.html" class="footer-link">Cari Vendor</a></li><li><a href="search.html" class="footer-link">Kategori</a></li><li><a href="#" class="footer-link">Findor Prime</a></li>
+              </ul>
+            </div>
+            <div><h4 style="font-size:11px;font-weight:700;color:#111827;margin-bottom:14px;text-transform:uppercase;letter-spacing:0.07em;">Perusahaan</h4>
+              <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px;">
+                <li><a href="about.html" class="footer-link">Tentang Kami</a></li><li><a href="#" class="footer-link">Karier</a></li><li><a href="#" class="footer-link">Kontak</a></li>
+              </ul>
+            </div>
+            <div><h4 style="font-size:11px;font-weight:700;color:#111827;margin-bottom:14px;text-transform:uppercase;letter-spacing:0.07em;">Dukungan</h4>
+              <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px;">
+                <li><a href="how-it-works.html" class="footer-link">Vendor Support</a></li><li><a href="#" class="footer-link">Pusat Bantuan</a></li><li><a href="#" class="footer-link">Keamanan Dana</a></li><li><a href="how-it-works.html" class="footer-link">Kebijakan Batal</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div style="border-top:1px solid #e5e7eb;margin-top:40px;padding-top:20px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;">
+          <p style="font-size:11px;color:#9ca3af;margin:0;">© 2026 Findor Marketplace · The Curated Gallery for Premium Events.</p>
+          <div class="footer-legal">
+            <a href="#" class="footer-legal-link">Privacy Policy</a><a href="#" class="footer-legal-link">Terms of Service</a><a href="#" class="footer-legal-link">Cookie Policy</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</main>
+
+<style>
+.about-hero { background:var(--forest);padding:120px 24px 90px;position:relative;overflow:hidden;text-align:center; }
+.about-hero-img { position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(0.45); }
+.about-hero-overlay1 { position:absolute;inset:0;background:linear-gradient(to bottom, rgba(13,59,46,0.55) 0%, rgba(13,59,46,0.9) 100%); }
+.about-hero-overlay2 { position:absolute;inset:0;background:radial-gradient(ellipse at center, transparent 40%, rgba(13,59,46,0.65) 100%); }
+.about-hero-content { position:relative;z-index:2;max-width:700px;margin:0 auto; }
+.about-hero-title { font-family:'Fraunces',serif;font-size:clamp(28px,5vw,58px);font-weight:900;color:var(--white);letter-spacing:-1.5px;line-height:1.08;margin-bottom:20px; }
+.about-hero-title em { font-style:italic;color:var(--amber);font-weight:300; }
+.about-hero-sub { font-size:15px;color:rgba(255,255,255,0.65);line-height:1.8;max-width:520px;margin:0 auto 36px; }
+.about-hero-cta { display:flex;gap:12px;justify-content:center;flex-wrap:wrap; }
+.about-btn { font-size:14px !important;padding:11px 24px !important; }
+
+.about-section { padding:80px 24px; }
+.about-section-gray { background:var(--gray-50); }
+.about-section-white { background:var(--white); }
+.about-container { max-width:960px;margin:0 auto; }
+.about-section-head { text-align:center;margin-bottom:48px; }
+.about-section-title { font-family:'Fraunces',serif;font-size:32px;font-weight:700;color:var(--text-primary);letter-spacing:-0.5px;margin-bottom:8px; }
+.about-section-sub { color:var(--text-secondary);font-size:15px; }
+
+.about-stats-section { background:var(--white);border-bottom:1px solid var(--gray-100);padding:52px 24px; }
+.stats-grid { display:grid;grid-template-columns:repeat(4,1fr);gap:24px; }
+.stat-item { text-align:center; }
+.stat-item-border { border-right:1px solid var(--gray-100);padding-right:24px; }
+.stat-value { font-family:'Fraunces',serif;font-size:38px;font-weight:900;color:var(--forest);letter-spacing:-1px;margin-bottom:4px;line-height:1; }
+.stat-label { font-size:13px;color:var(--text-secondary); }
+
+.story-grid { display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center; }
+.story-badge { display:inline-flex;align-items:center;background:rgba(245,166,35,0.12);border:1px solid rgba(245,166,35,0.25);border-radius:100px;padding:4px 14px;margin-bottom:16px;font-size:11px;font-weight:700;color:var(--amber);letter-spacing:0.1em;text-transform:uppercase; }
+.story-title { font-family:'Fraunces',serif;font-size:34px;font-weight:700;color:var(--text-primary);letter-spacing:-0.5px;line-height:1.2;margin-bottom:18px; }
+.story-title em { font-style:italic;color:var(--forest);font-weight:300; }
+.story-body { font-size:14px;color:var(--text-secondary);line-height:1.85;margin-bottom:14px; }
+.story-checklist { display:flex;flex-direction:column;gap:10px;margin-top:14px; }
+.story-check-item { display:flex;align-items:center;gap:10px; }
+.story-check-item span { font-size:13px;color:var(--text-primary);font-weight:500; }
+.story-img-wrap { border-radius:var(--radius-xl);overflow:hidden;aspect-ratio:4/3;position:relative; }
+.story-img { width:100%;height:100%;object-fit:cover; }
+.story-img-badge { position:absolute;bottom:20px;left:20px;background:var(--forest);border-radius:var(--radius-md);padding:12px 18px;display:flex;align-items:center;gap:10px; }
+.story-img-badge-label { font-size:11px;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:0.08em; }
+.story-img-badge-value { font-size:13px;font-weight:700;color:var(--white); }
+
+.milestone-grid { display:grid;grid-template-columns:repeat(4,1fr);gap:20px; }
+.milestone-card { border-radius:var(--radius-lg);padding:28px 24px; }
+.milestone-dark { background:var(--forest); }
+.milestone-light { background:var(--gray-50);border:1px solid var(--gray-100); }
+.milestone-year { font-family:'Fraunces',serif;font-size:32px;font-weight:900;margin-bottom:12px;line-height:1; }
+.milestone-year-amber { color:var(--amber); }
+.milestone-year-forest { color:var(--forest); }
+.milestone-title { font-weight:700;font-size:14px;margin-bottom:8px; }
+.milestone-title-white { color:var(--white); }
+.milestone-title-dark { color:var(--text-primary); }
+.milestone-desc { font-size:13px;line-height:1.65; }
+.milestone-desc-muted { color:rgba(255,255,255,0.6); }
+.milestone-desc-secondary { color:var(--text-secondary); }
+
+.values-grid { display:grid;grid-template-columns:1fr 1fr;gap:16px; }
+.value-card { background:var(--white);border-radius:var(--radius-lg);padding:24px 26px;border:1px solid var(--gray-100);display:flex;gap:16px;align-items:flex-start;transition:transform 0.25s, box-shadow 0.25s; }
+.value-card:hover { transform:translateY(-4px);box-shadow:var(--shadow-lg); }
+.value-icon { width:46px;height:46px;border-radius:14px;background:var(--forest);display:grid;place-items:center;color:var(--amber);flex-shrink:0; }
+.value-title { font-size:15px;font-weight:700;color:var(--text-primary);margin-bottom:6px; }
+.value-desc { font-size:13px;color:var(--text-secondary);line-height:1.7; }
+
+.team-grid { display:grid;grid-template-columns:repeat(4,1fr);gap:20px; }
+.team-card { background:var(--white);border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--gray-100);transition:transform 0.25s, box-shadow 0.25s; }
+.team-card:hover { transform:translateY(-4px);box-shadow:var(--shadow-lg); }
+.team-img-wrap { aspect-ratio:1;overflow:hidden;background:var(--gray-100);position:relative; }
+.team-img { width:100%;height:100%;object-fit:cover;transition:transform 0.4s; }
+.team-card:hover .team-img { transform:scale(1.06); }
+.team-img-overlay { position:absolute;inset:0;background:linear-gradient(to top, rgba(13,59,46,0.5) 0%, transparent 50%); }
+.team-info { padding:16px 16px 18px; }
+.team-name { font-size:14px;font-weight:700;color:var(--text-primary);margin-bottom:3px; }
+.team-role { font-size:12px;color:var(--text-secondary); }
+
+.about-cta-box { background:var(--forest);border-radius:var(--radius-xl);padding:56px 48px;text-align:center;position:relative;overflow:hidden; }
+.about-cta-img { position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(0.35); }
+.about-cta-overlay { position:absolute;inset:0;background:radial-gradient(ellipse at center, rgba(13,59,46,0.7) 0%, rgba(13,59,46,0.95) 100%); }
+.about-cta-title { font-family:'Fraunces',serif;font-size:34px;font-weight:700;color:var(--white);letter-spacing:-0.5px;margin-bottom:14px;line-height:1.2; }
+.about-cta-title em { font-style:italic;color:var(--amber);font-weight:300; }
+.about-cta-sub { font-size:15px;color:rgba(255,255,255,0.6);line-height:1.7;margin:0 auto 32px;max-width:440px; }
+.about-cta-actions { display:flex;gap:12px;justify-content:center;flex-wrap:wrap; }
+
+@media (max-width:1024px) {
+  .milestone-grid { grid-template-columns:repeat(2,1fr) !important; }
+  .team-grid { grid-template-columns:repeat(2,1fr) !important; }
+  .story-grid { gap:40px; }
+  .about-section { padding:64px 24px; }
+  .about-cta-box { padding:48px 36px; }
+  .about-cta-title { font-size:28px; }
+}
+@media (max-width:768px) {
+  .story-grid { grid-template-columns:1fr !important;gap:32px; }
+  .values-grid { grid-template-columns:1fr !important; }
+  .stats-grid { grid-template-columns:repeat(2,1fr) !important;gap:16px; }
+  .stat-item:nth-child(1), .stat-item:nth-child(2) { border-bottom:1px solid var(--gray-100);padding-bottom:16px; }
+  .stat-item:nth-child(3), .stat-item:nth-child(4) { border-bottom:none; }
+  .about-section { padding:48px 16px; }
+  .about-section-head { margin-bottom:36px; }
+  .about-section-title { font-size:26px; }
+  .story-title { font-size:26px; }
+  .about-cta-box { padding:36px 24px; }
+  .about-cta-title { font-size:24px; }
+}
+@media (max-width:640px) {
+  .about-hero { padding:100px 16px 60px; }
+  .about-hero-sub { font-size:14px; }
+  .about-hero-cta { flex-direction:column;align-items:center; }
+  .about-btn { width:100% !important;justify-content:center;max-width:280px; }
+  .about-stats-section { padding:36px 16px; }
+  .stat-value { font-size:30px; }
+  .milestone-grid { grid-template-columns:1fr !important; }
+  .milestone-card { padding:22px 18px; }
+  .team-grid { grid-template-columns:repeat(2,1fr) !important;gap:12px; }
+  .team-name { font-size:13px; }
+  .about-cta-box { padding:28px 20px; }
+  .about-cta-title { font-size:22px; }
+  .about-cta-sub { font-size:14px; }
+  .about-cta-actions { flex-direction:column;align-items:center; }
+  .about-cta-actions a { width:100%;max-width:280px;justify-content:center; }
+  .about-section-title { font-size:22px; }
+  .story-img-badge { left:12px;bottom:12px;padding:10px 14px; }
+}
+</style>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

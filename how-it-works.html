@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cara Kerja & Standar Platform — Findor</title>
+<meta name="description" content="Panduan lengkap cara kerja Findor untuk user dan vendor, proses verifikasi 5 tahap, serta aturan platform.">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="icon" href="assets/images/logo-icon.png">
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<div class="fn-nav-wrapper" id="fnNavWrapper">
+  <nav class="fn-pill" id="fnPill">
+    <a href="index.html" class="fn-logo"><img src="assets/images/logo_findor.jpg" alt="Findor" class="fn-logo-img"></a>
+    <div class="fn-sep-line"></div>
+    <div class="fn-links">
+      <a href="search.html" class="fn-link">Jelajahi Vendor</a>
+      <a href="how-it-works.html" class="fn-link active">Cara Kerja</a>
+      <a href="about.html" class="fn-link">Tentang Kami</a>
+    </div>
+    <div class="fn-desktop-actions" style="display:flex;align-items:center;gap:4px;">
+      <div class="fn-sep-line"></div>
+      <a href="#" class="fn-login" onclick="alert('Fitur login memerlukan backend dan tidak tersedia pada demo statis ini.');return false;">Masuk</a>
+      <a href="#daftar-vendor" class="fn-cta">Daftarkan Vendormu</a>
+    </div>
+    <button class="fn-toggle" id="fnToggle" aria-label="Toggle menu">
+      <svg id="fnToggleIconMenu" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+      <svg id="fnToggleIconClose" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="display:none;"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </nav>
+</div>
+<div class="fn-backdrop" id="fnBackdrop"></div>
+<div class="fn-drawer-wrap" id="fnDrawerWrap">
+  <div class="fn-drawer">
+    <a href="search.html" class="fn-m-link">Jelajahi Vendor<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+    <a href="how-it-works.html" class="fn-m-link active">Cara Kerja<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+    <a href="about.html" class="fn-m-link">Tentang Kami<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+    <div class="fn-m-sep"></div>
+    <a href="#daftar-vendor" class="fn-m-cta">Daftarkan Layanan</a>
+    <a href="#" class="fn-m-login" onclick="alert('Fitur login memerlukan backend dan tidak tersedia pada demo statis ini.');return false;">Masuk</a>
+  </div>
+</div>
+<!-- ===== END NAVBAR ===== -->
+
+<main style="min-height:100vh;background:var(--white);">
+
+  <section class="hiw-hero">
+    <img src="assets/images/how-it-works/hero.jpg" alt="" class="hiw-hero-img">
+    <div class="hiw-hero-overlay1"></div>
+    <div class="hiw-hero-overlay2"></div>
+    <div class="hiw-hero-content">
+      <div class="hiw-hero-badge">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--amber)" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <span>Standar Findor</span>
+      </div>
+      <h1 class="hiw-hero-title">Cara Kerja &<br><em>Standar</em> Platform</h1>
+      <p class="hiw-hero-sub">Panduan lengkap untuk user dan vendor agar setiap event berjalan profesional, aman, dan sesuai ekspektasi.</p>
+      <div class="hiw-hero-cta">
+        <a href="search.html" class="btn-primary hiw-btn">Cari Vendor
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <a href="#daftar-vendor" class="btn-secondary hiw-btn">Daftarkan Layanan</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="hiw-section hiw-section-gray">
+    <div class="hiw-container">
+      <div class="hiw-section-head">
+        <h2 class="hiw-section-title">5 Langkah Mudah</h2>
+        <p class="hiw-section-sub">Dari pencarian hingga event sukses — semua terpandu di Findor.</p>
+      </div>
+      <div class="how-steps-grid">
+        <div style="position:relative;">
+          <div class="step-connector"></div>
+          <div class="how-step-card">
+            <div class="step-icon-wrap"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+            <div class="step-num">01</div><div class="step-title">Cari Vendor</div>
+            <div class="step-desc">Temukan vendor sesuai kategori, lokasi, dan budget. Filter canggih membantu kamu menemukan yang paling cocok.</div>
+          </div>
+        </div>
+        <div style="position:relative;">
+          <div class="step-connector"></div>
+          <div class="how-step-card">
+            <div class="step-icon-wrap"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></div>
+            <div class="step-num">02</div><div class="step-title">Hubungi & Negosiasi</div>
+            <div class="step-desc">Diskusikan detail event langsung via WhatsApp. Tanyakan paket, ketersediaan, dan sesuaikan kebutuhan.</div>
+          </div>
+        </div>
+        <div style="position:relative;">
+          <div class="step-connector"></div>
+          <div class="how-step-card">
+            <div class="step-icon-wrap"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="m9 16 2 2 4-4"/></svg></div>
+            <div class="step-num">03</div><div class="step-title">Booking & DP</div>
+            <div class="step-desc">Lakukan booking resmi dan bayar DP melalui Virtual Account Findor. Dana aman hingga event selesai.</div>
+          </div>
+        </div>
+        <div style="position:relative;">
+          <div class="step-connector"></div>
+          <div class="how-step-card">
+            <div class="step-icon-wrap"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 21a1 1 0 0 0 1 1c1.1 0 2-.9 2-2 0-1.1-.9-2-2-2-1.7 0-3-1.3-3-3s1.3-3 3-3c1.1 0 2-.9 2-2s-.9-2-2-2a1 1 0 0 0-1 1"/><circle cx="12" cy="12" r="10"/></svg></div>
+            <div class="step-num">04</div><div class="step-title">Event Berjalan</div>
+            <div class="step-desc">Vendor hadir profesional di hari H. Tim Findor siap membantu jika ada kendala mendadak.</div>
+          </div>
+        </div>
+        <div style="position:relative;">
+          <div class="how-step-card">
+            <div class="step-icon-wrap"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/><path d="M6.5 15a6.5 6.5 0 1 1 11 0L12 22Z"/></svg></div>
+            <div class="step-num">05</div><div class="step-title">Selesai & Review</div>
+            <div class="step-desc">Pelunasan dilakukan setelah event sukses. Berikan ulasan untuk membantu komunitas Findor.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hiw-section hiw-section-white">
+    <div class="hiw-container">
+      <div class="hiw-block">
+        <div class="section-header">
+          <div class="section-header-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+          <div><h2 class="section-header-title">Aturan untuk User</h2><p class="section-header-sub">Berlaku untuk semua pengguna yang mencari dan memesan vendor di Findor.</p></div>
+        </div>
+        <div class="rules-grid">
+          <div class="rule-card rule-do"><div class="rule-icon rule-icon-do"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div><div><p class="rule-title">Komunikasi Lewat WhatsApp</p><p class="rule-desc">Semua negosiasi harga dan kesepakatan dilakukan langsung via WhatsApp dengan vendor.</p></div></div>
+          <div class="rule-card rule-do"><div class="rule-icon rule-icon-do"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div><div><p class="rule-title">Upload Bukti Transaksi Valid</p><p class="rule-desc">Setelah transfer, upload screenshot atau PDF bukti pembayaran yang jelas dan terbaca.</p></div></div>
+          <div class="rule-card rule-do"><div class="rule-icon rule-icon-do"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div><div><p class="rule-title">Booking Minimal 14 Hari Sebelum Event</p><p class="rule-desc">Pastikan booking setidaknya 2 minggu sebelum tanggal acara agar vendor dapat mempersiapkan diri.</p></div></div>
+          <div class="rule-card rule-do"><div class="rule-icon rule-icon-do"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div><div><p class="rule-title">Konfirmasi Detail Event Lengkap</p><p class="rule-desc">Sampaikan lokasi, durasi, jumlah tamu, dan kebutuhan teknis secara jelas kepada vendor.</p></div></div>
+          <div class="rule-card rule-dont"><div class="rule-icon rule-icon-dont"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg></div><div><p class="rule-title">Dilarang Membatalkan Sepihak</p><p class="rule-desc">Pembatalan kurang dari 7 hari sebelum event tidak mendapat refund. Hubungi tim Findor untuk mediasi.</p></div></div>
+          <div class="rule-card rule-dont"><div class="rule-icon rule-icon-dont"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg></div><div><p class="rule-title">Dilarang Transaksi di Luar Platform</p><p class="rule-desc">Semua pembayaran DP wajib melalui Virtual Account Findor. Transaksi langsung tidak dilindungi garansi.</p></div></div>
+          <div class="rule-card rule-dont"><div class="rule-icon rule-icon-dont"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg></div><div><p class="rule-title">Dilarang Memberikan Ulasan Palsu</p><p class="rule-desc">Ulasan hanya boleh diberikan oleh user yang benar-benar menggunakan layanan vendor tersebut.</p></div></div>
+        </div>
+      </div>
+
+      <div class="hiw-divider"></div>
+
+      <div class="hiw-block" id="daftar-vendor">
+        <div class="section-header">
+          <div class="section-header-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M3 7v14M21 7v14M6.5 21V11.5L12 7l5.5 4.5V21"/></svg></div>
+          <div><h2 class="section-header-title">Aturan untuk Vendor</h2><p class="section-header-sub">Berlaku untuk semua vendor yang terdaftar dan aktif di platform Findor.</p></div>
+        </div>
+        <div class="rules-grid">
+          <div class="rule-card rule-do"><div class="rule-icon rule-icon-do"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div><div><p class="rule-title">Respons WhatsApp Maksimal 2 Jam</p><p class="rule-desc">Vendor wajib merespons pesan dari calon klien dalam 2 jam di jam kerja (08.00–20.00).</p></div></div>
+          <div class="rule-card rule-do"><div class="rule-icon rule-icon-do"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div><div><p class="rule-title">Informasi Paket Harus Akurat</p><p class="rule-desc">Deskripsi paket, harga, dan ketersediaan yang ditampilkan di profil harus sesuai kondisi aktual.</p></div></div>
+          <div class="rule-card rule-do"><div class="rule-icon rule-icon-do"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div><div><p class="rule-title">Hadir Tepat Waktu di Hari H</p><p class="rule-desc">Vendor wajib tiba di lokasi minimal 2 jam sebelum acara dimulai untuk persiapan.</p></div></div>
+          <div class="rule-card rule-do"><div class="rule-icon rule-icon-do"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div><div><p class="rule-title">Laporkan Kendala Segera</p><p class="rule-desc">Jika ada hambatan teknis atau force majeure, vendor wajib menginformasikan ke klien dan tim Findor.</p></div></div>
+          <div class="rule-card rule-dont"><div class="rule-icon rule-icon-dont"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg></div><div><p class="rule-title">Dilarang Menolak Klien Tanpa Alasan</p><p class="rule-desc">Penolakan booking hanya diperbolehkan jika tanggal sudah terisi atau ada alasan teknis yang valid.</p></div></div>
+          <div class="rule-card rule-dont"><div class="rule-icon rule-icon-dont"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg></div><div><p class="rule-title">Dilarang Menaikkan Harga Mendadak</p><p class="rule-desc">Harga yang sudah disepakati tidak boleh diubah secara sepihak setelah klien melakukan DP.</p></div></div>
+          <div class="rule-card rule-dont"><div class="rule-icon rule-icon-dont"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg></div><div><p class="rule-title">Dilarang Menggunakan Peralatan Tidak Layak</p><p class="rule-desc">Semua peralatan harus sesuai yang tertera di paket dan dalam kondisi baik.</p></div></div>
+        </div>
+      </div>
+
+      <div class="hiw-divider"></div>
+
+      <div class="hiw-block">
+        <div class="section-header">
+          <div class="section-header-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+          <div><h2 class="section-header-title">Proses Verifikasi 5 Tahap</h2><p class="section-header-sub">Setiap vendor melewati seleksi ketat sebelum tampil di platform.</p></div>
+        </div>
+        <div class="verification-list">
+          <div class="verification-item"><div class="verification-line"></div><div class="verification-dot"><span>01</span></div><div class="verification-card"><p class="verification-title">Verifikasi Identitas</p><p class="verification-desc">KTP pemilik usaha dan NPWP bisnis diperiksa oleh tim Findor.</p></div></div>
+          <div class="verification-item"><div class="verification-line"></div><div class="verification-dot"><span>02</span></div><div class="verification-card"><p class="verification-title">Audit Portofolio</p><p class="verification-desc">Minimal 10 dokumentasi event nyata yang dapat diverifikasi.</p></div></div>
+          <div class="verification-item"><div class="verification-line"></div><div class="verification-dot"><span>03</span></div><div class="verification-card"><p class="verification-title">Pengecekan Peralatan</p><p class="verification-desc">Tim teknis Findor melakukan inspeksi fisik peralatan utama.</p></div></div>
+          <div class="verification-item"><div class="verification-line"></div><div class="verification-dot"><span>04</span></div><div class="verification-card"><p class="verification-title">Uji Respons & Komunikasi</p><p class="verification-desc">Simulasi interaksi klien untuk menilai profesionalisme vendor.</p></div></div>
+          <div class="verification-item"><div class="verification-dot"><span>05</span></div><div class="verification-card"><p class="verification-title">Review Riwayat Kerja</p><p class="verification-desc">Wawancara dengan minimal 3 klien terdahulu sebagai referensi.</p></div></div>
+        </div>
+      </div>
+
+      <div class="sanctions-box">
+        <div class="sanctions-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ea580c" stroke-width="2"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
+        <div>
+          <h3 class="sanctions-title">Sanksi Pelanggaran</h3>
+          <p class="sanctions-sub">Pelanggaran terhadap aturan di atas dapat mengakibatkan:</p>
+          <div class="sanctions-list">
+            <div class="sanctions-item"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#ea580c" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="4.9" y1="4.9" x2="19.1" y2="19.1"/></svg><span>Peringatan tertulis pertama dan kedua</span></div>
+            <div class="sanctions-item"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#ea580c" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="4.9" y1="4.9" x2="19.1" y2="19.1"/></svg><span>Pembekuan akun sementara (7–30 hari)</span></div>
+            <div class="sanctions-item"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#ea580c" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="4.9" y1="4.9" x2="19.1" y2="19.1"/></svg><span>Penghapusan permanen dari platform Findor</span></div>
+            <div class="sanctions-item"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#ea580c" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="4.9" y1="4.9" x2="19.1" y2="19.1"/></svg><span>Pelaporan ke pihak berwenang untuk kasus penipuan</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hiw-cta-box">
+        <img src="assets/images/how-it-works/cta.jpg" alt="" class="hiw-cta-img">
+        <div class="hiw-cta-overlay"></div>
+        <div class="hiw-cta-text">
+          <h3 class="hiw-cta-title">Ada pertanyaan soal aturan ini?</h3>
+          <p class="hiw-cta-sub">Tim Findor siap membantu Anda memahami standar platform kami.</p>
+        </div>
+        <div class="hiw-cta-actions">
+          <a href="index.html" class="btn-secondary hiw-btn">Kembali ke Beranda</a>
+          <a href="https://wa.me/628001234567" target="_blank" rel="noreferrer" class="hiw-wa-btn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg> Hubungi Kami
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div style="height:60px;background:linear-gradient(to bottom,#f5f5f0,#ffffff);"></div>
+    <div style="background:#ffffff;">
+      <div style="max-width:1280px;margin:0 auto;padding:0 clamp(16px,4vw,32px) 40px;box-sizing:border-box;">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <img src="assets/images/logo_findor.jpg" alt="Findor" style="height:44px;width:auto;object-fit:contain;margin-bottom:12px;border-radius:8px;">
+            <p style="font-size:12px;color:#6b7280;line-height:1.8;margin:0 0 18px;max-width:240px;">Pasar kurasi untuk vendor event premium. Menghubungkan penyelenggara dengan vendor terpercaya, suara, dan destinasi terbaik.</p>
+            <div style="display:flex;align-items:center;gap:8px;">
+              <a href="#" aria-label="Instagram" class="footer-social"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#374151" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="#374151" stroke="none"/></svg></a>
+              <a href="#" aria-label="Facebook" class="footer-social"><svg width="15" height="15" viewBox="0 0 24 24" fill="#374151"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+              <a href="#" aria-label="TikTok" class="footer-social"><svg width="15" height="15" viewBox="0 0 24 24" fill="#374151"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.75a4.85 4.85 0 0 1-1.01-.06z"/></svg></a>
+            </div>
+          </div>
+          <div class="footer-links-grid">
+            <div><h4 style="font-size:11px;font-weight:700;color:#111827;margin-bottom:14px;text-transform:uppercase;letter-spacing:0.07em;">Platform</h4>
+              <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px;"><li><a href="search.html" class="footer-link">Cari Vendor</a></li><li><a href="search.html" class="footer-link">Kategori</a></li><li><a href="#" class="footer-link">Findor Prime</a></li></ul>
+            </div>
+            <div><h4 style="font-size:11px;font-weight:700;color:#111827;margin-bottom:14px;text-transform:uppercase;letter-spacing:0.07em;">Perusahaan</h4>
+              <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px;"><li><a href="about.html" class="footer-link">Tentang Kami</a></li><li><a href="#" class="footer-link">Karier</a></li><li><a href="#" class="footer-link">Kontak</a></li></ul>
+            </div>
+            <div><h4 style="font-size:11px;font-weight:700;color:#111827;margin-bottom:14px;text-transform:uppercase;letter-spacing:0.07em;">Dukungan</h4>
+              <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px;"><li><a href="how-it-works.html" class="footer-link">Vendor Support</a></li><li><a href="#" class="footer-link">Pusat Bantuan</a></li><li><a href="#" class="footer-link">Keamanan Dana</a></li><li><a href="how-it-works.html" class="footer-link">Kebijakan Batal</a></li></ul>
+            </div>
+          </div>
+        </div>
+        <div style="border-top:1px solid #e5e7eb;margin-top:40px;padding-top:20px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;">
+          <p style="font-size:11px;color:#9ca3af;margin:0;">© 2026 Findor Marketplace · The Curated Gallery for Premium Events.</p>
+          <div class="footer-legal"><a href="#" class="footer-legal-link">Privacy Policy</a><a href="#" class="footer-legal-link">Terms of Service</a><a href="#" class="footer-legal-link">Cookie Policy</a></div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</main>
+
+<style>
+.hiw-hero { background:var(--forest);padding:120px 24px 80px;text-align:center;position:relative;overflow:hidden; }
+.hiw-hero-img { position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(0.45); }
+.hiw-hero-overlay1 { position:absolute;inset:0;background:linear-gradient(to bottom, rgba(13,59,46,0.6) 0%, rgba(13,59,46,0.88) 100%); }
+.hiw-hero-overlay2 { position:absolute;inset:0;background:radial-gradient(ellipse at center, transparent 40%, rgba(13,59,46,0.65) 100%); }
+.hiw-hero-content { position:relative;z-index:2;max-width:640px;margin:0 auto; }
+.hiw-hero-badge { display:inline-flex;align-items:center;gap:8px;background:rgba(245,166,35,0.15);border:1px solid rgba(245,166,35,0.35);border-radius:100px;padding:6px 16px;margin-bottom:24px;font-size:11px;font-weight:600;color:var(--amber);letter-spacing:0.1em;text-transform:uppercase; }
+.hiw-hero-title { font-family:'Fraunces',serif;font-size:clamp(28px,5vw,56px);font-weight:900;color:var(--white);letter-spacing:-1.5px;line-height:1.08;margin-bottom:18px; }
+.hiw-hero-title em { font-style:italic;color:var(--amber);font-weight:300; }
+.hiw-hero-sub { font-size:15px;color:rgba(255,255,255,0.65);line-height:1.8;max-width:480px;margin:0 auto 32px; }
+.hiw-hero-cta { display:flex;gap:12px;justify-content:center;flex-wrap:wrap; }
+.hiw-btn { font-size:14px !important;padding:11px 24px !important; }
+
+.hiw-section { padding:80px 24px; }
+.hiw-section-gray { background:var(--gray-50); }
+.hiw-section-white { background:var(--white); }
+.hiw-container { max-width:960px;margin:0 auto; }
+.hiw-section-head { text-align:center;margin-bottom:52px; }
+.hiw-section-title { font-family:'Fraunces',serif;font-size:32px;font-weight:700;color:var(--text-primary);letter-spacing:-0.5px;margin-bottom:8px; }
+.hiw-section-sub { color:var(--text-secondary);font-size:15px; }
+.hiw-block { margin-bottom:64px; }
+.hiw-divider { height:1px;background:var(--gray-100);margin-bottom:64px; }
+
+.section-header { display:flex;align-items:center;gap:14px;margin-bottom:28px;flex-wrap:wrap; }
+.section-header-icon { width:44px;height:44px;border-radius:14px;background:var(--forest);display:grid;place-items:center;color:var(--amber);flex-shrink:0; }
+.section-header-title { font-family:'Fraunces',serif;font-size:22px;font-weight:700;color:var(--text-primary);letter-spacing:-0.3px;margin-bottom:2px; }
+.section-header-sub { font-size:14px;color:var(--text-secondary); }
+
+.how-steps-grid { display:grid;grid-template-columns:repeat(5,1fr);gap:16px; }
+.step-connector { position:absolute;top:28px;left:60%;right:-40%;height:2px;background:linear-gradient(to right, var(--amber), var(--gray-200));z-index:0; }
+.how-step-card { background:var(--white);border-radius:var(--radius-lg);padding:24px 18px;border:1px solid var(--gray-100);text-align:center;position:relative;z-index:1;transition:transform 0.25s, box-shadow 0.25s; }
+.how-step-card:hover { transform:translateY(-4px);box-shadow:var(--shadow-lg); }
+.step-icon-wrap { width:52px;height:52px;border-radius:50%;background:var(--forest);margin:0 auto 14px;display:grid;place-items:center;color:var(--amber); }
+.step-num { font-size:11px;font-weight:700;color:var(--amber);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:6px; }
+.step-title { font-weight:700;font-size:15px;color:var(--text-primary);margin-bottom:8px; }
+.step-desc { font-size:13px;color:var(--text-secondary);line-height:1.65; }
+
+.rules-grid { display:grid;grid-template-columns:1fr 1fr;gap:12px; }
+.rule-card { background:var(--white);border-radius:var(--radius-lg);padding:20px 22px;display:flex;gap:14px;align-items:flex-start; }
+.rule-do { border:1px solid #d1fae5; }
+.rule-dont { border:1px solid #fee2e2; }
+.rule-icon { width:34px;height:34px;border-radius:10px;flex-shrink:0;display:grid;place-items:center; }
+.rule-icon-do { background:#dcfce7;color:var(--verified-green); }
+.rule-icon-dont { background:#fee2e2;color:var(--danger); }
+.rule-title { font-size:13px;font-weight:700;color:var(--text-primary);margin-bottom:4px; }
+.rule-desc { font-size:13px;color:var(--text-secondary);line-height:1.65; }
+
+.verification-list { display:flex;flex-direction:column;gap:0; }
+.verification-item { display:flex;gap:20px;align-items:flex-start;position:relative;padding-bottom:24px; }
+.verification-item:last-child { padding-bottom:0; }
+.verification-line { position:absolute;left:21px;top:46px;width:2px;height:calc(100% - 16px);background:var(--gray-100); }
+.verification-dot { width:44px;height:44px;border-radius:50%;background:var(--forest);display:grid;place-items:center;flex-shrink:0;z-index:1; }
+.verification-dot span { font-size:12px;font-weight:800;color:var(--amber); }
+.verification-card { background:var(--gray-50);border-radius:var(--radius-md);padding:16px 20px;flex:1;border:1px solid var(--gray-100); }
+.verification-title { font-size:15px;font-weight:700;color:var(--text-primary);margin-bottom:4px; }
+.verification-desc { font-size:14px;color:var(--text-secondary);line-height:1.6; }
+
+.sanctions-box { background:#fff7ed;border:1px solid #fed7aa;border-radius:var(--radius-xl);padding:28px 32px;display:flex;gap:20px;align-items:flex-start;margin-bottom:64px;flex-wrap:wrap; }
+.sanctions-icon { width:46px;height:46px;border-radius:14px;background:#ffedd5;display:grid;place-items:center;flex-shrink:0; }
+.sanctions-title { font-size:17px;font-weight:700;color:#9a3412;margin-bottom:8px; }
+.sanctions-sub { font-size:14px;color:#7c2d12;line-height:1.7;margin-bottom:12px; }
+.sanctions-list { display:flex;flex-direction:column;gap:7px; }
+.sanctions-item { display:flex;align-items:center;gap:8px; }
+.sanctions-item span { font-size:14px;color:#7c2d12; }
+
+.hiw-cta-box { background:var(--forest);border-radius:var(--radius-xl);padding:40px 48px;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:24px; }
+.hiw-cta-img { position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(0.35); }
+.hiw-cta-overlay { position:absolute;inset:0;background:linear-gradient(100deg, rgba(13,59,46,0.95) 40%, rgba(13,59,46,0.5) 100%); }
+.hiw-cta-text { position:relative;z-index:1; }
+.hiw-cta-title { font-family:'Fraunces',serif;font-size:24px;font-weight:700;color:var(--white);margin-bottom:6px;letter-spacing:-0.3px; }
+.hiw-cta-sub { font-size:14px;color:rgba(255,255,255,0.6);line-height:1.6; }
+.hiw-cta-actions { display:flex;gap:10px;position:relative;z-index:1;flex-wrap:wrap; }
+.hiw-wa-btn { padding:10px 20px;border-radius:100px;background:#25D366;color:white;font-size:13px;font-weight:600;text-decoration:none;display:inline-flex;align-items:center;gap:6px; }
+
+@media (max-width:1024px) {
+  .how-steps-grid { grid-template-columns:repeat(3,1fr) !important; }
+  .step-connector { display:none; }
+  .rules-grid { grid-template-columns:1fr 1fr; }
+  .hiw-cta-box { padding:32px 28px; }
+  .hiw-cta-title { font-size:20px; }
+  .hiw-section { padding:60px 24px; }
+}
+@media (max-width:768px) {
+  .how-steps-grid { grid-template-columns:repeat(2,1fr) !important; }
+  .rules-grid { grid-template-columns:1fr !important; }
+  .hiw-section { padding:48px 16px; }
+  .hiw-block { margin-bottom:48px; }
+  .hiw-divider { margin-bottom:48px; }
+  .hiw-section-head { margin-bottom:36px; }
+  .hiw-section-title { font-size:26px; }
+  .sanctions-box { padding:20px;flex-direction:row;gap:14px; }
+  .hiw-cta-box { padding:28px 20px;flex-direction:column;align-items:flex-start; }
+  .hiw-cta-title { font-size:18px; }
+  .section-header { gap:12px; }
+  .section-header-title { font-size:19px; }
+}
+@media (max-width:640px) {
+  .hiw-hero { padding:100px 16px 60px; }
+  .hiw-hero-sub { font-size:14px; }
+  .hiw-hero-cta { flex-direction:column;align-items:center; }
+  .hiw-btn { width:100%;justify-content:center;max-width:280px; }
+  .how-steps-grid { grid-template-columns:1fr !important; }
+  .hiw-section { padding:40px 16px; }
+  .hiw-section-title { font-size:22px; }
+  .hiw-cta-actions { flex-direction:column;width:100%; }
+  .hiw-cta-actions a { text-align:center;justify-content:center; }
+  .how-step-card { padding:20px 16px; }
+  .verification-card { padding:14px 16px; }
+  .sanctions-box { padding:18px 16px; }
+  .sanctions-title { font-size:15px; }
+}
+</style>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

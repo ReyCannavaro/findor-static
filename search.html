@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jelajahi Vendor — Findor</title>
+<meta name="description" content="Cari dan bandingkan ratusan vendor event terverifikasi di seluruh Indonesia berdasarkan kategori, kota, dan budget.">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="icon" href="assets/images/logo-icon.png">
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<div class="fn-nav-wrapper" id="fnNavWrapper">
+  <nav class="fn-pill" id="fnPill">
+    <a href="index.html" class="fn-logo"><img src="assets/images/logo_findor.jpg" alt="Findor" class="fn-logo-img"></a>
+    <div class="fn-sep-line"></div>
+    <div class="fn-links">
+      <a href="search.html" class="fn-link active">Jelajahi Vendor</a>
+      <a href="how-it-works.html" class="fn-link">Cara Kerja</a>
+      <a href="about.html" class="fn-link">Tentang Kami</a>
+    </div>
+    <div class="fn-desktop-actions" style="display:flex;align-items:center;gap:4px;">
+      <div class="fn-sep-line"></div>
+      <a href="#" class="fn-login" onclick="alert('Fitur login memerlukan backend dan tidak tersedia pada demo statis ini.');return false;">Masuk</a>
+      <a href="how-it-works.html#daftar-vendor" class="fn-cta">Daftarkan Vendormu</a>
+    </div>
+    <button class="fn-toggle" id="fnToggle" aria-label="Toggle menu">
+      <svg id="fnToggleIconMenu" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+      <svg id="fnToggleIconClose" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="display:none;"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </nav>
+</div>
+<div class="fn-backdrop" id="fnBackdrop"></div>
+<div class="fn-drawer-wrap" id="fnDrawerWrap">
+  <div class="fn-drawer">
+    <a href="search.html" class="fn-m-link active">Jelajahi Vendor<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+    <a href="how-it-works.html" class="fn-m-link">Cara Kerja<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+    <a href="about.html" class="fn-m-link">Tentang Kami<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+    <div class="fn-m-sep"></div>
+    <a href="how-it-works.html#daftar-vendor" class="fn-m-cta">Daftarkan Layanan</a>
+    <a href="#" class="fn-m-login" onclick="alert('Fitur login memerlukan backend dan tidak tersedia pada demo statis ini.');return false;">Masuk</a>
+  </div>
+</div>
+<!-- ===== END NAVBAR ===== -->
+
+<main style="min-height:100vh;background:#f7f7f5;font-family:'Plus Jakarta Sans',sans-serif;">
+
+  <section style="position:relative;padding-top:clamp(100px,14vw,140px);padding-bottom:clamp(48px,8vw,80px);overflow:hidden;min-height:420px;">
+    <div style="position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=1600&q=80');background-size:cover;background-position:center 40%;filter:brightness(0.45);"></div>
+    <div style="position:absolute;inset:0;background:linear-gradient(110deg, rgba(13,59,46,0.82) 40%, rgba(13,59,46,0.3) 100%);"></div>
+    <div style="position:absolute;inset:0;background:linear-gradient(to top, rgba(13,59,46,0.9) 0%, transparent 55%);"></div>
+
+    <div style="position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:0 clamp(16px,4vw,24px);">
+      <div style="margin-bottom:28px;">
+        <p style="font-size:11px;color:rgba(255,255,255,0.5);margin-bottom:10px;letter-spacing:0.14em;font-weight:700;text-transform:uppercase;">✦ Jelajahi Vendor</p>
+        <h1 style="font-family:'Fraunces',serif;font-size:clamp(26px,4vw,54px);font-weight:900;color:white;margin-bottom:10px;letter-spacing:-1.5px;line-height:1.08;">
+          Temukan Vendor Terbaik<br><em style="font-style:italic;color:#f5a623;font-weight:300;">untuk Acara Anda</em>
+        </h1>
+        <p id="resultIntro" style="font-size:14px;color:rgba(255,255,255,0.55);max-width:460px;">Memuat vendor...</p>
+      </div>
+
+      <div>
+        <div class="search-bar-box">
+          <div class="search-input-wrap" id="searchInputWrap">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <input id="searchQueryInput" placeholder="Cari nama vendor atau layanan..." class="search-input">
+            <button id="clearQueryBtn" style="display:none;background:none;border:none;cursor:pointer;padding:0;color:#9ca3af;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </button>
+          </div>
+
+          <div class="search-bar-dropdowns">
+            <div class="dd-wrap" id="ddKategori">
+              <button class="dd-trigger" id="ddKategoriTrigger">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" stroke-width="2"><line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="17" y1="16" x2="23" y2="16"/></svg>
+                <span class="dd-value" id="ddKategoriValue">Semua Kategori</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" stroke-width="2" style="flex-shrink:0;"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="dd-menu" id="ddKategoriMenu" style="display:none;"></div>
+            </div>
+            <div class="dd-wrap" id="ddKota">
+              <button class="dd-trigger" id="ddKotaTrigger">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                <span class="dd-value" id="ddKotaValue">Semua Kota</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" stroke-width="2" style="flex-shrink:0;"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="dd-menu" id="ddKotaMenu" style="display:none;"></div>
+            </div>
+          </div>
+
+          <button id="btnCari" class="search-btn-cari">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <span>Cari Vendor</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="hero-pills" id="heroPills"></div>
+    </div>
+  </section>
+
+  <section id="resultsSection" style="max-width:1200px;margin:0 auto;padding:clamp(24px,4vw,40px) clamp(16px,4vw,24px) 80px;">
+
+    <div class="mobile-filter-fab-row">
+      <button id="btnOpenDrawer" class="mobile-filter-btn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>
+        Filter
+        <span id="fabBadge" class="fab-badge" style="display:none;">0</span>
+      </button>
+      <div class="mobile-chips" id="mobileChips"></div>
+    </div>
+
+    <div class="results-layout">
+      <aside class="sidebar-desktop" id="sidebarDesktop"></aside>
+
+      <div style="flex:1;min-width:0;">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;flex-wrap:wrap;gap:10px;">
+          <div>
+            <p id="resultCountText" style="font-size:15px;font-weight:700;color:#0f172a;display:flex;align-items:center;gap:8px;"></p>
+            <div class="desktop-chips" id="desktopChips"></div>
+          </div>
+          <div style="display:flex;align-items:center;gap:6px;font-size:12px;color:#94a3b8;flex-shrink:0;">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg> Rating Tertinggi
+          </div>
+        </div>
+
+        <div id="browseGrid" class="browse-grid"></div>
+        <div id="emptyState" style="display:none;text-align:center;padding:60px 0;">
+          <div style="width:56px;height:56px;background:#f1f5f9;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          </div>
+          <p style="font-size:17px;font-weight:700;color:#0f172a;margin-bottom:8px;">Vendor tidak ditemukan</p>
+          <p style="font-size:13px;color:#94a3b8;margin-bottom:24px;">Coba ubah kata kunci, kategori, atau kota yang Anda cari.</p>
+          <button onclick="findorResetFilter()" style="padding:11px 28px;border-radius:999px;background:#0d3b2e;color:white;font-size:13px;font-weight:700;border:none;cursor:pointer;">Tampilkan Semua Vendor</button>
+        </div>
+
+        <div id="paginationWrap" style="display:flex;align-items:center;justify-content:center;gap:8px;margin-top:40px;"></div>
+      </div>
+    </div>
+  </section>
+
+  <div id="drawerBackdrop" class="drawer-backdrop" style="display:none;">
+    <div class="drawer-panel" onclick="event.stopPropagation()">
+      <div class="drawer-handle"></div>
+      <div id="sidebarMobile"></div>
+    </div>
+  </div>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div style="height:60px;background:linear-gradient(to bottom,#f5f5f0,#ffffff);"></div>
+    <div style="background:#ffffff;">
+      <div style="max-width:1280px;margin:0 auto;padding:0 clamp(16px,4vw,32px) 40px;box-sizing:border-box;">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <img src="assets/images/logo_findor.jpg" alt="Findor" style="height:44px;width:auto;object-fit:contain;margin-bottom:12px;border-radius:8px;">
+            <p style="font-size:12px;color:#6b7280;line-height:1.8;margin:0 0 18px;max-width:240px;">Pasar kurasi untuk vendor event premium. Menghubungkan penyelenggara dengan vendor terpercaya, suara, dan destinasi terbaik.</p>
+            <div style="display:flex;align-items:center;gap:8px;">
+              <a href="#" aria-label="Instagram" class="footer-social"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#374151" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="#374151" stroke="none"/></svg></a>
+              <a href="#" aria-label="Facebook" class="footer-social"><svg width="15" height="15" viewBox="0 0 24 24" fill="#374151"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+              <a href="#" aria-label="TikTok" class="footer-social"><svg width="15" height="15" viewBox="0 0 24 24" fill="#374151"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.75a4.85 4.85 0 0 1-1.01-.06z"/></svg></a>
+            </div>
+          </div>
+          <div class="footer-links-grid">
+            <div><h4 style="font-size:11px;font-weight:700;color:#111827;margin-bottom:14px;text-transform:uppercase;letter-spacing:0.07em;">Platform</h4>
+              <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px;"><li><a href="search.html" class="footer-link">Cari Vendor</a></li><li><a href="search.html" class="footer-link">Kategori</a></li><li><a href="#" class="footer-link">Findor Prime</a></li></ul>
+            </div>
+            <div><h4 style="font-size:11px;font-weight:700;color:#111827;margin-bottom:14px;text-transform:uppercase;letter-spacing:0.07em;">Perusahaan</h4>
+              <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px;"><li><a href="about.html" class="footer-link">Tentang Kami</a></li><li><a href="#" class="footer-link">Karier</a></li><li><a href="#" class="footer-link">Kontak</a></li></ul>
+            </div>
+            <div><h4 style="font-size:11px;font-weight:700;color:#111827;margin-bottom:14px;text-transform:uppercase;letter-spacing:0.07em;">Dukungan</h4>
+              <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px;"><li><a href="how-it-works.html" class="footer-link">Vendor Support</a></li><li><a href="#" class="footer-link">Pusat Bantuan</a></li><li><a href="#" class="footer-link">Keamanan Dana</a></li><li><a href="how-it-works.html" class="footer-link">Kebijakan Batal</a></li></ul>
+            </div>
+          </div>
+        </div>
+        <div style="border-top:1px solid #e5e7eb;margin-top:40px;padding-top:20px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;">
+          <p style="font-size:11px;color:#9ca3af;margin:0;">© 2026 Findor Marketplace · The Curated Gallery for Premium Events.</p>
+          <div class="footer-legal"><a href="#" class="footer-legal-link">Privacy Policy</a><a href="#" class="footer-legal-link">Terms of Service</a><a href="#" class="footer-legal-link">Cookie Policy</a></div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</main>
+
+<style>
+@keyframes shimmer { 0%{background-position:200% 0} 100%{background-position:-200% 0} }
+@keyframes sectionFlash { 0%{background:transparent} 30%{background:rgba(13,59,46,0.06)} 100%{background:transparent} }
+@keyframes cardPop { 0%{transform:translateY(10px) scale(0.98);opacity:0.6} 60%{transform:translateY(-3px) scale(1.01);opacity:1} 100%{transform:translateY(0) scale(1);opacity:1} }
+@keyframes slideUp { from{transform:translateY(100%)} to{transform:translateY(0)} }
+
+.search-bar-box { background:white;border-radius:18px;padding:14px 16px;display:flex;gap:10px;align-items:center;flex-wrap:wrap;box-shadow:0 20px 60px rgba(0,0,0,0.22);max-width:900px; }
+.search-input-wrap { display:flex;align-items:center;gap:10px;flex:1 1 200px;padding:9px 14px;border-radius:12px;border:1.5px solid #e5e7eb;background:#fafafa;transition:border-color 0.18s;min-width:0; }
+.search-input-wrap.focused { border-color:#0d3b2e; }
+.search-input { border:none;outline:none;flex:1;font-size:14px;color:#111827;background:transparent;font-family:inherit;min-width:0; }
+.search-bar-dropdowns { display:flex;gap:10px;flex:0 1 420px;flex-wrap:wrap; }
+.search-bar-dropdowns > * { flex:1 1 180px;min-width:0; }
+.search-btn-cari { flex-shrink:0;display:flex;align-items:center;gap:8px;padding:12px 20px;border-radius:12px;background:#0d3b2e;color:white;font-size:14px;font-weight:700;border:none;cursor:pointer;font-family:inherit;white-space:nowrap;transition:all 0.2s; }
+
+.hero-pills { margin-top:18px;display:flex;gap:8px;flex-wrap:wrap; }
+.hero-pill { padding:6px 13px;border-radius:100px;border:1.5px solid rgba(255,255,255,0.18);background:rgba(255,255,255,0.09);color:rgba(255,255,255,0.78);font-size:12px;font-weight:600;cursor:pointer;backdrop-filter:blur(8px);transition:all 0.18s;font-family:inherit;white-space:nowrap;display:flex;align-items:center;gap:5px; }
+.hero-pill.active { border-color:#f5a623;background:#f5a623;color:#0d3b2e; }
+
+.results-layout { display:flex;gap:28px;align-items:flex-start; }
+.sidebar-desktop { width:260px;flex-shrink:0;position:sticky;top:90px; display:block; }
+.filter-panel { background:white;border-radius:18px;border:1px solid #f1f5f9;overflow:hidden; }
+.filter-panel-header { display:flex;align-items:center;justify-content:space-between;padding:16px 18px;border-bottom:1px solid #f1f5f9; }
+.filter-section { padding:16px 18px;border-bottom:1px solid #f1f5f9; }
+.filter-label { font-size:11px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:10px; }
+.filter-kategori-list { display:flex;flex-direction:column;gap:2px;max-height:320px;overflow-y:auto; }
+.filter-cat-item { display:flex;align-items:center;gap:8px;padding:8px 10px;border-radius:10px;border:none;background:transparent;font-size:13px;font-weight:400;color:#374151;cursor:pointer;font-family:inherit;text-align:left;transition:background 0.15s;width:100%; }
+.filter-cat-item:hover { background:#f9fafb; }
+.filter-cat-item.active { background:#f0fdf4;color:#0d3b2e;font-weight:600; }
+.filter-actions { padding:14px 18px;display:flex;flex-direction:column;gap:8px; }
+.filter-btn-apply { display:flex;align-items:center;justify-content:center;gap:7px;padding:11px;border-radius:12px;background:#0d3b2e;color:white;font-size:13px;font-weight:700;border:none;cursor:pointer;font-family:inherit;transition:background 0.2s;width:100%; }
+.filter-btn-reset { display:flex;align-items:center;justify-content:center;gap:6px;padding:9px;border-radius:12px;background:#fff1f2;color:#ef4444;font-size:12px;font-weight:600;border:none;cursor:pointer;font-family:inherit;width:100%; }
+
+.dd-wrap { position:relative;width:100%; }
+.dd-trigger { width:100%;display:flex;align-items:center;gap:8px;padding:10px 12px;border-radius:12px;border:1.5px solid #e5e7eb;cursor:pointer;font-family:inherit;font-size:13px;font-weight:500;color:#111827;transition:all 0.18s;text-align:left;background:white;box-shadow:0 1px 4px rgba(0,0,0,0.06); }
+.dd-trigger.open { border-color:#0d3b2e;background:#f0fdf4;box-shadow:0 0 0 3px rgba(13,59,46,0.08); }
+.dd-value { flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#9ca3af; }
+.dd-value.selected { color:#111827; }
+.dd-menu { position:absolute;top:calc(100% + 6px);left:0;width:100%;min-width:220px;background:white;border-radius:14px;border:1px solid #e5e7eb;box-shadow:0 12px 40px rgba(0,0,0,0.12);z-index:50;overflow:hidden;max-height:280px;overflow-y:auto; }
+.dd-opt { width:100%;display:flex;align-items:center;gap:10px;padding:9px 14px;background:transparent;border:none;border-bottom:1px solid #f9fafb;cursor:pointer;font-family:inherit;font-size:13.5px;color:#374151;text-align:left; }
+.dd-opt:hover { background:#f9fafb; }
+.dd-opt.active { background:#f0fdf4;color:#0d3b2e;font-weight:600; }
+
+.chip { font-size:11px;background:#f0fdf4;color:#16a34a;padding:3px 8px 3px 10px;border-radius:999px;font-weight:600;border:1px solid #bbf7d0;display:inline-flex;align-items:center;gap:4px;white-space:nowrap; }
+.chip-reset { background:#fff1f2;color:#ef4444;border-color:#fecaca;cursor:pointer; }
+.chip-x { background:none;border:none;cursor:pointer;padding:0 2px;display:flex;color:inherit;opacity:0.7;line-height:1; }
+.chip-x:hover { opacity:1; }
+
+.desktop-chips { display:flex;gap:6px;margin-top:8px;flex-wrap:wrap;align-items:center; }
+.mobile-chips { display:none;gap:6px;flex-wrap:wrap;overflow-x:auto; }
+
+.mobile-filter-fab-row { display:none;align-items:center;gap:10px;margin-bottom:16px;flex-wrap:wrap; }
+.mobile-filter-btn { display:flex;align-items:center;gap:6px;padding:9px 16px;border-radius:100px;background:white;border:1.5px solid #e5e7eb;font-size:13px;font-weight:700;color:#0d3b2e;cursor:pointer;font-family:inherit;box-shadow:0 2px 8px rgba(0,0,0,0.07);position:relative;flex-shrink:0; }
+.fab-badge { position:absolute;top:-5px;right:-5px;background:#0d3b2e;color:white;width:18px;height:18px;border-radius:50%;font-size:10px;font-weight:800;display:flex;align-items:center;justify-content:center; }
+
+.drawer-backdrop { position:fixed;inset:0;background:rgba(0,0,0,0.45);z-index:9999;display:flex;align-items:flex-end;backdrop-filter:blur(2px); }
+.drawer-panel { background:white;border-radius:24px 24px 0 0;width:100%;max-height:88vh;overflow-y:auto;animation:slideUp 0.3s cubic-bezier(0.22,1,0.36,1);padding-bottom:32px; }
+.drawer-handle { width:40px;height:4px;background:#e5e7eb;border-radius:2px;margin:14px auto 6px; }
+
+.browse-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:20px; }
+.browse-card { background:white;border-radius:18px;overflow:hidden;border:1px solid #f1f5f9;transition:transform 0.25s ease, box-shadow 0.25s ease;cursor:pointer;text-decoration:none;display:block;color:inherit; }
+.browse-card:hover { transform:translateY(-4px);box-shadow:0 16px 48px rgba(0,0,0,0.10); }
+.card-pop { animation:cardPop 0.4s ease both; }
+
+.page-btn { padding:9px 18px;border-radius:100px;border:1px solid #e5e7eb;background:white;font-size:13px;font-weight:600;transition:all 0.15s;font-family:inherit;cursor:pointer; }
+.page-btn:disabled { color:#d1d5db;cursor:not-allowed; }
+.page-btn:not(:disabled) { color:#374151; }
+
+@media screen and (max-width:1024px) {
+  .sidebar-desktop { display:none !important; }
+  .mobile-filter-fab-row { display:flex !important; }
+  .desktop-chips { display:none !important; }
+  .browse-grid { grid-template-columns:repeat(2,1fr) !important;gap:16px !important; }
+  .search-bar-dropdowns { display:none !important; }
+  .results-layout { gap:0 !important; }
+  .mobile-chips { display:flex; }
+}
+@media screen and (max-width:640px) {
+  .browse-grid { grid-template-columns:1fr !important;gap:14px !important; }
+  .search-btn-cari span { display:none !important; }
+  .search-btn-cari { padding:12px 14px !important; }
+  .hero-pills { display:none !important; }
+  .mobile-filter-fab-row { flex-wrap:wrap !important; }
+  .search-bar-box { padding:10px 12px !important;border-radius:14px !important; }
+  .search-input-wrap { flex:1 1 100% !important; }
+  .mobile-chips { flex-wrap:wrap !important;overflow-x:visible !important; }
+}
+</style>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/search.js"></script>
+</body>
+</html>
